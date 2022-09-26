@@ -28,13 +28,13 @@ public class LugendresFactorizer {
 			}
 		}
 		if(p>1) {
-			int fp;	
+			int powerCount;	
 			for(int v=0; v<p; v++) {
-				fp=0;
+				powerCount=0;
 				for(int i=1; i<=n; i++){
-					fp += (int)n/(Math.pow(factors[v][0], i));
+					powerCount += (int)n/(Math.pow(factors[v][0], i));
 				}
-				factors[v][1]=fp;
+				factors[v][1]=powerCount;
 			}
 		}
 	}
