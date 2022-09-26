@@ -32,7 +32,7 @@ public class LugendresFactorizer {
 			int powerCount;	
 			for(int v=0; v<p; v++) {
 				powerCount=0;
-				for(int i=1; i<=n; i++){
+				for(int i=1; Math.pow(factors[v][0], i)<=n; i++){
 					powerCount += (int)n/(Math.pow(factors[v][0], i));
 				}
 				factors[v][1]=powerCount;
