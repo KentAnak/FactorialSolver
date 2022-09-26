@@ -9,6 +9,7 @@ public class LugendresFactorizer {
 	int[][] factors;
 	LugendresFactorizer(int inputnum){
 		n = inputnum;
+		if(n < 1) throw new ArithmeticException("Input value must be greater than 0.");
 		int primeCount=0;
 		for(int i=1; i<=n; i++) {
 			factorial = factorial.multiply(BigInteger.valueOf(i));		
@@ -50,11 +51,14 @@ public class LugendresFactorizer {
 		return true;
 	}
 	public String toString() {
-		String s = n+"! = "+factorial+" = ";
-		for (int i = 0; i< factors.length; i++) {
-			if(factors[i][1]==1) s += factors[i][0];
-			else s += factors[i][0]+"^"+factors[i][1];
-			if(i != factors.length-1) s += " * ";
+		String s = n+"! = "+factorial;
+		if(n>=3) {
+			s+=" = ";
+			for (int i = 0; i< factors.length; i++) {
+				if(factors[i][1]==1) s += factors[i][0];
+				else s += factors[i][0]+"^"+factors[i][1];
+				if(i != factors.length-1) s += " * ";
+			}
 		}
 		return s;
 	}
