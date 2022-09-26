@@ -8,7 +8,7 @@ import java.math.BigInteger;
 public class LugendresFactorizer {
 	int n;
 	BigInteger factorial = BigInteger.ONE;	
-	int[][] factorsPower;
+	int[][] factorsAndExps;
 	LugendresFactorizer(int inputnum){
 		n = inputnum;
 		if(n < 1) throw new ArithmeticException("Input value must be greater than 0.");
@@ -19,20 +19,20 @@ public class LugendresFactorizer {
 
 		int factors[] = eratosthenesSeive(inputnum);
 		int primesCount = factors.length;
-		factorsPower = new int[primesCount][2];
+		factorsAndExps = new int[primesCount][2];
 		for(int i=0; i<primesCount; i++) {
-			factorsPower[i][0]=factors[i];
-			factorsPower[i][1] = 1;
+			factorsAndExps[i][0]=factors[i];
+			factorsAndExps[i][1] = 1;
 		}	
 		
 		if(primesCount>1) {
 			int powerCount;	
 			for(int p=0; p<primesCount; p++) {
 				powerCount=0;
-				for(int i=1; Math.pow(factorsPower[p][0], i)<=n; i++){
-					powerCount += (int)n/(Math.pow(factorsPower[p][0], i));
+				for(int i=1; Math.pow(factorsAndExps[p][0], i)<=n; i++){
+					powerCount += (int)n/(Math.pow(factorsAndExps[p][0], i));
 				}
-				factorsPower[p][1]=powerCount;
+				factorsAndExps[p][1]=powerCount;
 			}
 		}
 	}
@@ -65,10 +65,10 @@ public class LugendresFactorizer {
 		String s = n+"! = "+factorial;
 		if(n>=3) {
 			s+=" = ";
-			for (int i = 0; i< factorsPower.length; i++) {
-				if(factorsPower[i][1]==1) s += factorsPower[i][0];
-				else s += factorsPower[i][0]+"^"+factorsPower[i][1];
-				if(i != factorsPower.length-1) s += " * ";
+			for (int i = 0; i< factorsAndExps.length; i++) {
+				if(factorsAndExps[i][1]==1) s += factorsAndExps[i][0];
+				else s += factorsAndExps[i][0]+"^"+factorsAndExps[i][1];
+				if(i != factorsAndExps.length-1) s += " * ";
 			}
 		}
 		return s;
