@@ -28,11 +28,11 @@ public class LugendresFactorizer {
 			}
 		}
 		if(p>1) {
-			int fp=0;	
-			for(int v=0; v<factors[0].length; v++) {
+			int fp;	
+			for(int v=0; v<p; v++) {
 				fp=0;
 				for(int i=1; i<=n; i++){
-					fp += n/(int)(Math.pow(factors[v][0], i));
+					fp += (int)n/(Math.pow(factors[v][0], i));
 				}
 				factors[v][1]=fp;
 			}
