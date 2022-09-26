@@ -5,12 +5,13 @@ public class Query {
 		
 		//Sample usage.
 		LugendresFactorizer sample = new LugendresFactorizer(6);
-		//It returns "720"
+		
 		System.out.println(sample.factorial);
-		//It returns[[2, 4], [3, 2], [5, 1]]
+		//It returns "720"
 		System.out.println(java.util.Arrays.deepToString(sample.factors));
-		//It returns "6! = 720 = 2^4 * 3^2 * 5"
+		//It returns[[2, 4], [3, 2], [5, 1]]
 		System.out.println(sample);	
+		//It returns "6! = 720 = 2^4 * 3^2 * 5"
 		
 		//Sample question.
 		//Find the smallest positive integer n such that n! has 290 zeros at the end of the number.
