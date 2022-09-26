@@ -17,17 +17,17 @@ public class Query {
 		//Find the smallest n such that n! ends in 290 zeros.
 		//The answer is 1170.
 		int answer=0;
-		for(int i=1;i<1200;i++) 
+		for(int n=1;n<1200;n++) 
 		{
-			LugendresFactorizer l = new LugendresFactorizer(i);
+			LugendresFactorizer l = new LugendresFactorizer(n);
 			String str = l.factorial.toString();
 			int zeroCount = 0;
-			for(int j=1; j<str.length(); j++) {
-				if(str.charAt(str.length()-(j))=='0') zeroCount++;
+			for(int i=1; i<str.length(); i++) {
+				if(str.charAt(str.length()-(i))=='0') zeroCount++;
 				else break;
 			}
 			if (zeroCount >= 290) {
-				answer = i;
+				answer = n;
 				break;
 			}
 		}
@@ -38,11 +38,11 @@ public class Query {
 		//so factors[2][1] is the desired number.
 		//This answer is also 1170.
 		int anotherAnswer=0;
-		for(int i=5;i<1200;i++) 
+		for(int n=5;n<1200;n++) 
 		{
-			LugendresFactorizer l = new LugendresFactorizer(i);
+			LugendresFactorizer l = new LugendresFactorizer(n);
 			if (l.factorsPower[2][1] >= 290) {
-				anotherAnswer = i;
+				anotherAnswer = n;
 				break;
 			}
 		}
