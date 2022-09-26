@@ -8,7 +8,7 @@ public class Query {
 		
 		System.out.println(sample.factorial);
 		//It returns "720"
-		System.out.println(java.util.Arrays.deepToString(sample.factors));
+		System.out.println(java.util.Arrays.deepToString(sample.factorsPower));
 		//It returns[[2, 4], [3, 2], [5, 1]]
 		System.out.println(sample);	
 		//It returns "6! = 720 = 2^4 * 3^2 * 5"
@@ -41,7 +41,7 @@ public class Query {
 		for(int i=5;i<1200;i++) 
 		{
 			LugendresFactorizer l = new LugendresFactorizer(i);
-			if (l.factors[2][1] >= 290) {
+			if (l.factorsPower[2][1] >= 290) {
 				anotherAnswer = i;
 				break;
 			}
