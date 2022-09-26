@@ -14,7 +14,7 @@ public class Query {
 		//It returns "6! = 720 = 2^4 * 3^2 * 5"
 		
 		//Sample question.
-		//Find the smallest positive integer n such that n! has 290 zeros at the end of the number.
+		//Find the smallest n such that n! ends in 290 zeros.
 		//The answer is 1170.
 		int answer=0;
 		for(int i=1;i<1200;i++) 
