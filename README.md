@@ -1,8 +1,8 @@
 # FactorialSolver
 
-Have you ever seen a problem like the following? <b>"Find the smallest n such that n! ends in 290 zeros"</b>(HMMT, 2003). <b>Legendre's formula</b> can be used in such cases.I actually wrote some Java code to check it out.
+Have you ever seen a problem like the following? <b>"Find the smallest n such that n! ends in 290 zeros"</b>(HMMT, 2003). <b>Legendre's formula</b> can be used in such cases. I actually wrote some Java code to check it out.
 
-The sample code answers the above question in two ways. One is a brute-force method: find the factorial in BigInterger and loop until the trailing 0 is 270. Programming would give the answer in an instant, but it is difficult for a human to compute.
+The sample code <b>Query.java</b> answers the above question in two ways. One is a brute-force method: find the factorial in BigInterger and loop until the trailing 0 is 270. Programming would give the answer in an instant, but it is difficult for a human to compute.
 
 The second method is using Lujandre's formula. Given any prime number p and a positive integer n, how many times n! can be divided by p is found by summing the decimal fraction (floor) of n divided by p to the i-th power.
 
